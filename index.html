@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云湖❊久钥小说交流群</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* 深色背景，突出雪花 */
+            color: #fff;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden; /* 防止横向滚动条 */
+            position: relative; /* 用于音乐按钮的绝对定位 */
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section {
+            background-color: #333; /* 深色卡片背景 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards; /* 动画持续时间调整为1秒 */
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        img {
+            width: 100px; /* 强制图片大小一致 */
+            height: auto;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            font-size: 1.8em; /* 调整字体大小 */
+            color: #6a0dad; /* 紫色标题 */
+            text-shadow: 0 0 8px #6a0dad, 0 0 8px #6a0dad; /* 发光描边 */
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #6a0dad; /* 紫色按钮 */
+            border: none;
+            border-radius: 20px; /* 圆角按钮 */
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #550088; /* 按钮悬停效果 */
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            background-color: #440066; /* 按钮点击效果 */
+        }
+
+        .social-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #6a0dad;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #550088;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 下雪特效 */
+        .snow {
+            position: absolute;
+            top: -10px;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: #fff;
+            animation: fall 8s linear infinite;
+        }
+
+        @keyframes fall {
+            100% {
+                top: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section" style="animation-delay: 0s;">
+            <img src="jy.png" alt="久钥小说交流群">
+            <h1>🎉 加入久钥小说交流群</h1>
+            <p>欢迎小说爱好者加入我们的小家庭！在这里，你可以：</p>
+            <ul>
+                <li>📚 分享和讨论你最喜欢的小说</li>
+                <li>💬 结识志同道合的小说迷</li>
+                <li>🎁 获取最新的小说推荐和资源</li>
+                <li>🎉 跟大家一起交流</li>
+            </ul>
+            <a href="https://yhfx.jwznb.com/share?key=IAiwohmkJlYR&ts=1743952265" class="button">立即加入</a>
+        </div>
+
+        <div class="section" style="animation-delay: 1s;">
+            <img src="yh.png" alt="云湖社交APP">
+            <h2>为什么选择云湖社交APP？</h2>
+            <p>云湖社交APP是新型的AI新型式社交平台，提供以下功能：</p>
+            <ul>
+                <li>🌟 丰富的机器人：官方机器人、小说推荐机器人、RSS订阅机器人等</li>
+                <li>🌐 全平台支持：MacOS、Windows、Android、iOS、Linux</li>
+                <li>☁️ 消息云端存储：随时随地查看历史聊天记录</li>
+                <li>👥 群人数多：邀请更多的朋友加入</li>
+            </ul>
+            <a href="https://www.yhchat.com/" class="button">立即下载</a>
+        </div>
+    </div>
+
+    <!-- 下雪特效 -->
+    <script>
+        function createSnow() {
+            const snow = document.createElement('div');
+            snow.classList.add('snow');
+            snow.style.left = `${Math.random() * window.innerWidth}px`;
+            snow.style.animationDuration = `${Math.random() * 5 + 3}s`; // 随机下落时间，范围3-8秒
+            snow.style.opacity = Math.random(); // 随机透明度
+            document.body.appendChild(snow);
+
+            // 雪花下落完成后移除
+            snow.addEventListener('animationend', () => {
+                snow.remove();
+            });
+        }
+
+        // 每200毫秒生成一个雪花，调整雪花数量
+        setInterval(createSnow, 200);
+    </script>
+</body>
+</html>
